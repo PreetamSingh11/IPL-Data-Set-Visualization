@@ -1,4 +1,4 @@
-# IPL data-set visualization using Highchart.
+# IPL data-set visualization using Highcharts.
 
 **1: Clone this repository**
 
