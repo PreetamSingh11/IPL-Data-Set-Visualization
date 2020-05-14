@@ -92,6 +92,3 @@ typings/
 
 # vscode
 .vscode
-
-# Data file
-public/data.json
