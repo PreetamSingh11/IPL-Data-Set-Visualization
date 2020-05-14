@@ -1,47 +1,20 @@
-function fetchAndVisualizeData() {
-  fetch("./data.json")
-    .then(r => r.json())
-    .then(visualizeData);
-}
+import matchesPlayedPerYear from './modules/matchesPlayed.js';
+import matchesWonByTeams from './modules/matchesWon.js';
+import extraRunsIn2016 from './modules/extraRuns.js';
+import topEconomicalBowlers2015 from './modules/economicalBowlers.js';
+import teamsPerformanceInLast5 from './modules/teamsPerformance.js';
 
-fetchAndVisualizeData();
+(() => {
+	fetch('./data.json')
+		.then((r) => r.json())
+		.then(visualizeData);
+})();
 
 function visualizeData(data) {
-  visualizeMatchesPlayedPerYear(data.matchesPlayedPerYear);
-  return;
-}
-
-function visualizeMatchesPlayedPerYear(matchesPlayedPerYear) {
-  const seriesData = [];
-  for (let year in matchesPlayedPerYear) {
-    seriesData.push([year, matchesPlayedPerYear[year]]);
-  }
-
-  Highcharts.chart("matches-played-per-year", {
-    chart: {
-      type: "column"
-    },
-    title: {
-      text: "Matches Played Per Year"
-    },
-    subtitle: {
-      text:
-        'Source: <a href="https://www.kaggle.com/nowke9/ipldata/data">IPL Dataset</a>'
-    },
-    xAxis: {
-      type: "category"
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: "Matches"
-      }
-    },
-    series: [
-      {
-        name: "Years",
-        data: seriesData
-      }
-    ]
-  });
+	matchesPlayedPerYear(data.matchesPlayedPerYear);
+	matchesWonByTeams(data.matchesWonByTeams);
+	extraRunsIn2016(data.extraRunByTeams2016['2016']);
+	topEconomicalBowlers2015(data.topEconomicalBowlers2015);
+	teamsPerformanceInLast5(data.teamsInLast5Overs);
+	window.dispatchEvent(new Event('resize'));
 }
