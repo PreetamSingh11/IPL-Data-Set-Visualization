@@ -1,9 +1,9 @@
-# IPL data-set visualization using Highchart.
+# IPL data-set visualization using Highcharts.
 
 **1: Clone this repository**
 
 ```sh
-git clone
+git clone https://github.com/PritamSingh11/IPL-Data-Set-Visualization.git
 ```
 
 **2: Install npm packages**
