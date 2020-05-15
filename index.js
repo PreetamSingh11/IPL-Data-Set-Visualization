@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const csv = require('csvtojson');
 const economicalBowlers = require('./ipl/economicalBowlers');
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
 
 const MATCHES_FILE = './csv_data/matches.csv';
 const DELIVERIES_FILE = './csv_data/deliveries.csv';
@@ -26,5 +28,5 @@ const DELIVERIES_FILE = './csv_data/deliveries.csv';
 		res.json(economicalBowlers(matches, deliveries, req.query.year));
 	});
 
-	app.listen(port, () => console.log(`app listening at http://localhost:${port}`));
+	app.listen(PORT, () => console.log(`app listening at http://localhost:${PORT}`));
 })();
