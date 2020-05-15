@@ -10,11 +10,12 @@ yearInput.value = '';
 errMsg.style.visibility = 'hidden';
 errMsg.innerHTML = 'Error: Year must be from 2008 to 2019.';
 errMsg.style.color = 'red';
+const url = window.location.origin;
 
 function renderBowlers() {
 	const year = yearInput.value;
 	if (parseInt(year) >= 2008 && parseInt(year) <= 2019) {
-		fetch(`http://localhost:3000/economy?year=${year}`, { method: 'GET' })
+		fetch(`${url}/economy?year=${year}`, { method: 'GET' })
 			.then((response) => response.json())
 			.then((bowlers) => topEconomicalBowlers(bowlers, year));
 	} else setErrors();
