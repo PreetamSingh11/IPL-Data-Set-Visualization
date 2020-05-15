@@ -1,7 +1,5 @@
-module.exports = (matches, deliveries) => {
+module.exports = (matches, deliveries, year) => {
 	let result = {};
-	let year = '2015';
-
 	let matchesPlayed = [];
 
 	// List of matches played during season 2015
@@ -12,7 +10,7 @@ module.exports = (matches, deliveries) => {
 	// This Block calculates 'total over' and 'total run' per player
 	let lastOver = 0;
 	deliveries.forEach((delivery) => {
-		// CHECK: If delivery thrown during year 2015.
+		// CHECK: If delivery thrown during a particular year.
 		if (matchesPlayed.includes(delivery.match_id)) {
 			// CHECK: If bowler is not present in result set then set his name, first delivery and runs.
 			if (!result[delivery.bowler]) {

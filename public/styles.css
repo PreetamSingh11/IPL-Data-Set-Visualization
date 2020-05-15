@@ -5,12 +5,35 @@ html {
 	height: auto;
 	width: 100%;
 	font-family: sans-serif;
+	text-align: center;
+}
+
+.input-container {
+	width: 60%;
+	margin: 10px auto;
+	display: grid;
+	grid-template-columns: auto 30%;
+	grid-template-areas:
+		'inputYear btn'
+		'err-msg err-msg';
+	gap: 10px 20px;
+}
+
+#year-input {
+	grid-area: inputYear;
+}
+#visualize-btn {
+	grid-area: btn;
+}
+
+#input-error {
+	grid-area: err-msg;
+	padding: 10px;
 }
 
 .chart-container {
 	margin: 0px auto;
 	margin-bottom: 80px;
-	text-align: center;
 	width: 90%;
 	padding: 0 2%;
 }
@@ -19,4 +42,10 @@ html {
 	margin: 2% 5%;
 	border-radius: 6px;
 	box-shadow: 9px 7px 21px 1px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 768px) {
+	.input-container {
+		width: 90%;
+	}
 }

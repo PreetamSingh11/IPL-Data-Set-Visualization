@@ -1,19 +1,19 @@
 import { styleSetting } from './styleSettings.js';
 
-export default (bowlersEconomies) => {
+export default (bowlersEconomies, year) => {
 	let economyResult = [];
 
 	bowlersEconomies.forEach((bowler) => {
 		economyResult.push([bowler.name, bowler.economy]);
 	});
 
-	Highcharts.chart('top-economical-bowlers-in-2015', {
+	Highcharts.chart('top-economical-bowlers', {
 		chart: {
 			type: 'column',
 			...styleSetting,
 		},
 		title: {
-			text: 'Top Economical Bowlers in 2015 season',
+			text: `Top Economical Bowlers in ${year} season`,
 		},
 		subtitle: {
 			text: 'Source: <a href="https://www.kaggle.com/nowke9/ipldata/data">IPL Dataset</a>',

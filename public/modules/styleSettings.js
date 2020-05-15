@@ -3,5 +3,4 @@ export const styleSetting = {
 	borderColor: '#5c6bc0',
 	borderWidth: 2,
 	borderRadius: 6,
-	height: '50%',
 };

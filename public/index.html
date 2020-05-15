@@ -13,17 +13,22 @@
 	</head>
 
 	<body>
+		<h1>IPL Dataset visualization</h1>
+		<div class="input-container">
+			<input
+				type="number"
+				id="year-input"
+				min="2008"
+				max="2019"
+				placeholder="Enter year"
+				autocomplete="off"
+			/>
+			<button id="visualize-btn">Visualize</button>
+			<span id="input-error"></span>
+		</div>
+
 		<div class="chart-container">
-			<h1>IPL Dataset visualization</h1>
-			<div id="matches-played-per-year" class="chart"></div>
-			<hr />
-			<div id="matches-won-by-teams" class="chart"></div>
-			<hr />
-			<div id="extra-runs-by-teams-in-2016" class="chart"></div>
-			<hr />
-			<div id="top-economical-bowlers-in-2015" class="chart"></div>
-			<hr />
-			<div id="teams-in-last-5-overs" class="chart"></div>
+			<div id="top-economical-bowlers" class="chart"></div>
 		</div>
 
 		<script src="https://code.highcharts.com/highcharts.js"></script>
