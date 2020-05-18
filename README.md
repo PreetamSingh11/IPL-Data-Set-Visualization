@@ -1,7 +1,10 @@
 This repository has three branches :
 1: **master** : Static version
+
 2: **dynamic-site** : User interaction added, both client & server runs as two seprate process
+
 3: **dynamic-heroku** : Static assets serves using express, so has same origin.
+
 
 # IPL data-set visualization using Highcharts.
 
